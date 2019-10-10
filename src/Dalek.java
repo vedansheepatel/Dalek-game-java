@@ -14,7 +14,9 @@ public class Dalek {
      * @param theCol The column this Dalek starts at.
      */
     public Dalek(int theRow, int theCol) {
-
+        this.row = theRow;
+        this.col = theCol;
+        this.hasCrashed = false;
     }
 
     /**
@@ -26,6 +28,21 @@ public class Dalek {
      * @param doc The Doctor to move towards.
      */
     public void advanceTowards(Doctor doc) {
+        if (!this.hasCrashed) {
+            if (doc.getRow() > row) {
+                row++;
+            }
+            if (doc.getRow() < row) {
+                row--;
+            }
+            if (doc.getCol() > col) {
+                col++;
+            }
+            if (doc.getCol() < col) {
+                col--;
+            }
+            
+        }
 
     }
 
@@ -35,7 +52,7 @@ public class Dalek {
      * @return This Dalek's row.
      */
     public int getRow() {
-
+        return this.row;
     }
 
     /**
@@ -44,14 +61,14 @@ public class Dalek {
      * @return This Dalek's column.
      */
     public int getCol() {
-
+        return this.col;
     }
 
     /**
      * Sets the Dalek to be in a crashed state.
      */
     public void crash() {
-
+        this.hasCrashed = true;
     }
 
     /**
@@ -60,7 +77,7 @@ public class Dalek {
      * @return true if this Dalek has crashed, false otherwise
      */
     public boolean hasCrashed() {
-
+        return this.hasCrashed;
     }
 
 }

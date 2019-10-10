@@ -4,6 +4,7 @@
  */
 public class Doctor {
 
+    private Board board;
     private int row, col;
 
     /**
@@ -13,7 +14,8 @@ public class Doctor {
      * @param theCol The column this Doctor starts at.
      */
     public Doctor(int theRow, int theCol) {
-
+        this.row = theRow;
+        this.col = theCol;
     }
 
     /**
@@ -28,7 +30,23 @@ public class Doctor {
      * @param newCol The column the player clicked on.
      */
     public void move(int newRow, int newCol) {
-
+        if (newRow != row){
+            if (newRow == row + 1 || newRow == row - 1) {
+                row = newRow;
+            }else if (newRow > row + 1 || newRow > row ) {
+                row = (int) (Math.random() * (12));
+            }
+        }
+       if (newCol != col){
+            if (newCol == col + 1 || newCol == col - 1) {
+                col = newCol;
+            }else if (newCol > col + 1 || newCol > col ) {
+                col = (int) (Math.random() * (12));
+            }
+        
+       }
+       
+       
     }
 
     /**
@@ -37,7 +55,7 @@ public class Doctor {
      * @return This Doctor's row.
      */
     public int getRow() {
-
+        return this.row;
     }
 
     /**
@@ -46,7 +64,7 @@ public class Doctor {
      * @return This Doctor's column.
      */
     public int getCol() {
-
+        return this.col;
     }
 
 }

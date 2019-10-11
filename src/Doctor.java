@@ -3,7 +3,8 @@
  *  a position and can move to a new position.
  */
 public class Doctor {
-
+    
+    //instance variables
     private Board board;
     private int row, col;
 
@@ -13,6 +14,7 @@ public class Doctor {
      * @param theRow The row this Doctor starts at.
      * @param theCol The column this Doctor starts at.
      */
+    //constructor to call when doctor is made
     public Doctor(int theRow, int theCol) {
         this.row = theRow;
         this.col = theCol;
@@ -29,7 +31,10 @@ public class Doctor {
      * @param newRow The row the player clicked on.
      * @param newCol The column the player clicked on.
      */
+    
     public void move(int newRow, int newCol) {
+        //if click's row is greater or less than doctors current position by 1 change the row to the click Row
+        //if click's row is not surrounding the docotrs current position, teleport somewhere randomly
         if (newRow != row){
             if (newRow == row + 1 || newRow == row - 1) {
                 row = newRow;
@@ -37,6 +42,8 @@ public class Doctor {
                 row = (int) (Math.random() * (12));
             }
         }
+        //if click's col is greater or less than doctors current position by 1 change the col to the click col
+        //if click's col is not surrounding the doctors current position, teleport somewhere randomly
        if (newCol != col){
             if (newCol == col + 1 || newCol == col - 1) {
                 col = newCol;
@@ -54,6 +61,7 @@ public class Doctor {
      *
      * @return This Doctor's row.
      */
+    //accessor methods to get doctors row and col
     public int getRow() {
         return this.row;
     }

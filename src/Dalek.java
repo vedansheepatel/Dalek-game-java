@@ -3,6 +3,7 @@
  *  a position and can advance towards the Doctor.
  */
 public class Dalek {
+
     //instance variables
     private int row, col;
     private boolean hasCrashed;
@@ -39,15 +40,15 @@ public class Dalek {
             if (doc.getRow() < row) {
                 row--;
             }
-             //if doctors col is greater than the doctor, increase dalek's col by 1 to move closer to doctor
+            //if doctors col is greater than the doctor, increase dalek's col by 1 to move closer to doctor
             if (doc.getCol() > col) {
                 col++;
             }
-             //if doctors col is less than the doctor, decrease dalek's col by 1 to move closer to doctor
+            //if doctors col is less than the doctor, decrease dalek's col by 1 to move closer to doctor
             if (doc.getCol() < col) {
                 col--;
             }
-            
+
         }
 
     }

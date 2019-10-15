@@ -3,7 +3,7 @@
  *  a position and can move to a new position.
  */
 public class Doctor {
-    
+
     //instance variables
     private Board board;
     private int row, col;
@@ -31,29 +31,29 @@ public class Doctor {
      * @param newRow The row the player clicked on.
      * @param newCol The column the player clicked on.
      */
-    
     public void move(int newRow, int newCol) {
         //if click's row is greater or less than doctors current position by 1 change the row to the click Row
         //if click's row is not surrounding the docotrs current position, teleport somewhere randomly
-        if (newRow != row){
+        if (newRow != row) {
             if (newRow == row + 1 || newRow == row - 1) {
                 row = newRow;
-            }else if (newRow > row + 1 || newRow > row ) {
+            } 
+            if (newRow > row + 1 || newRow < row) {
                 row = (int) (Math.random() * (12));
             }
         }
         //if click's col is greater or less than doctors current position by 1 change the col to the click col
         //if click's col is not surrounding the doctors current position, teleport somewhere randomly
-       if (newCol != col){
+        if (newCol != col) {
             if (newCol == col + 1 || newCol == col - 1) {
                 col = newCol;
-            }else if (newCol > col + 1 || newCol > col ) {
+            } 
+            if (newCol > col + 1 || newCol < col - 1) {
                 col = (int) (Math.random() * (12));
             }
-        
-       }
-       
-       
+
+        }
+
     }
 
     /**
